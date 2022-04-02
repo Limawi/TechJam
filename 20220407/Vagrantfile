@@ -1,0 +1,47 @@
+# frozen_string_literal: true
+
+scriptinstall = <<-SCRIPT
+  set -Eeuo pipefail
+
+  echo 'Install Docker'
+  apt-get update
+  apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+  if [ ! -f /usr/share/keyrings/docker-archive-keyring.gpg ]; then
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+  fi
+  echo \
+    "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  apt-get update
+  apt-get install -y docker-ce docker-ce-cli containerd.io git
+
+  echo 'Install Dagger'
+  cd /usr/local
+  curl -L https://dl.dagger.io/dagger/install.sh | sh
+SCRIPT
+
+scripttest = <<-SCRIPT
+  set -Eeuo pipefail
+
+  cd /usr/local/src
+  git clone https://github.com/dagger/dagger
+  cd dagger
+  git checkout v0.2.4
+SCRIPT
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/impish64"
+
+  config.vm.provision 'shell' do |shell|
+    shell.inline = scriptinstall
+  end
+
+  config.vm.provision 'shell' do |shell|
+    shell.inline = scripttest
+  end
+end
