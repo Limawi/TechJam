@@ -28,17 +28,17 @@ cd todoapp
 dagger do build
 ```
 
-Exemple changelog.com :
+Exemple changelog.com (erreur `FTL` pour le moment) :
 
 ```
 cd changelog.com
-dagger do build
+dagger do app
 ```
 
 Exemple helloworld :
 ```
 cd helloworld
-dagger do build
+dagger do hello
 ```
 
 ### Avantages
