@@ -16,6 +16,8 @@ En dot :
 * [Kubernetes](https://github.com/steveteuber/kubectl-graph)
 * [Terraform](https://www.terraform.io/cli/commands/graph)
 
+Approche déclarative vs impérative : Diagrammes d'infrastructures vs flow diagrams
+
 # Tests as Doc as Code
 
 Comportement/recette :
