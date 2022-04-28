@@ -25,6 +25,7 @@ Comportement/recette :
 Êtat d'infrastructure :
 
 * [Inspec output](https://github.com/tecracer-chef/inspec-reporter-flex)
+* [Swagger](https://swagger.io/tools/open-source/)
 
 # Formatage et publication
 
