@@ -22,7 +22,7 @@ Par [Michée Lengronne](https://github.com/micheelengronne)
 
 * Atomicité, contexte et packagification (gestion de dépendences)
 
-* Apiification (REST, GRPC)
+* Apiification (REST, [GRPC](https://grpc.io/))
 
 * GitOps
 
