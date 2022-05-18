@@ -4,6 +4,16 @@ Par [Michée Lengronne](https://github.com/micheelengronne)
 
 # Pourquoi ?
 
+* Les limites de bash
+
+* Gérer de la big infra
+
+* Casser les cloisons
+
+* Tester et retester
+
+* Réutiliser et partager
+
 # Concepts
 
 * Impératif vs déclaratif
